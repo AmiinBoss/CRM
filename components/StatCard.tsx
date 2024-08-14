@@ -1,4 +1,3 @@
-// src/components/StatCard.tsx
 import React from 'react';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
@@ -19,7 +18,7 @@ const StatCard: React.FC<StatCardProps> = ({
   progressValue,
 }) => {
   return (
-    <div className="bg-white dark:bg-gray-800 shadow-sm rounded-lg p-6 flex items-center justify-between">
+    <div className="bg-white dark:bg-gray-800 shadow-sm rounded-lg p-6 flex items-center justify-between h-32"> {/* Increased height */}
       <div>
         <div className="text-4xl font-bold text-gray-900 dark:text-white">{value}</div>
         <div className="text-gray-500 dark:text-gray-400 text-sm font-medium mt-1">{title}</div>

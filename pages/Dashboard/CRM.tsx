@@ -1,10 +1,12 @@
-// src/pages/Dashboard/CRM.tsx
 import React from 'react';
 import StatCard from '../../components/StatCard';
+import PaymentsOverview from '../../components/PaymentsOverview';
+import UsedDevices from '../../components/UsedDevices';
+import LeadsReport from '../../components/LeadsReport';
 
 const CRM: React.FC = () => {
   return (
-    <div className="space-y-6">
+    <div>
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">This Week’s Overview</h2>
         <div className="flex items-center space-x-2">
@@ -15,7 +17,8 @@ const CRM: React.FC = () => {
           </select>
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
+
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6 mb-6">
         <StatCard
           title="Clients Added"
           value="197"
@@ -37,6 +40,23 @@ const CRM: React.FC = () => {
           isPositive={true}
           progressValue={45} // Example progress value
         />
+      </div>
+
+      {/* Payment Overview and Used Devices Section */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
+        {/* PaymentsOverview takes up 70% of the grid width */}
+        <div className="md:col-span-2">
+          <PaymentsOverview />
+        </div>
+        {/* UsedDevices takes up 30% of the grid width */}
+        <div className="md:col-span-1">
+          <UsedDevices />
+        </div>
+      </div>
+
+      {/* LeadsReport Section */}
+      <div className="mb-6">
+        <LeadsReport />
       </div>
     </div>
   );
